@@ -1,0 +1,375 @@
+:root {
+  --color-black: #000000;
+  --color-bg-dark: #202633;
+  --color-card-bg: #282c34;
+  --color-text: #f0f0f0;
+  --color-text-muted: #9ca3af;
+  --color-status-good: #22c55e;
+  --color-status-moderate: #f97316;
+  --color-status-normal: #9ca3af;
+}
+
+.app-bg {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #1c2331, #0f141b);
+  padding: 40px;
+}
+
+.weather-container {
+  max-width: 1300px;
+  border-radius: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02));
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+}
+
+/* Left Panel */
+.left-panel {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02));
+  border-radius: 25px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  min-height: 600px;
+}
+
+/* Search Bar */
+.search-wrapper {
+  margin: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-form {
+  gap: 0.5rem;
+  background: white;
+  padding: 0.6rem 1rem;
+}
+
+.search-icon {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.search-input {
+  flex: 1;
+  background: white;
+  border: none;
+  color: var(--color-black);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Main Info */
+.main-info {
+  margin-bottom: 1.5rem;
+}
+
+.weather-hero-img {
+  margin-bottom: 0.5rem;
+}
+
+.current-temp {
+  font-size: 6rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.location-day {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text);
+  font-size: 1.25rem;
+}
+
+/* Minor Info */
+.minor-info {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.minor-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.minor-info i {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Humidity & Wind Cards - single card, two metrics side by side */
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.metric-card .sunrise-sunset-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+.metric-card .sunrise-sunset-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  text-align: center;
+  font-size: 1.75rem;
+  color: var(--color-text);
+}
+
+.metric-card .sunrise-sunset-time {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.metric-card .sunrise-sunset-label-small {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* Right Panel */
+.right-panel {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02));
+  border-radius: 25px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  min-height: 600px;
+}
+
+/* Day Toggle */
+.right-panel .day-toggle .nav-link {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.right-panel .day-toggle .nav-link:hover {
+  color: var(--color-text);
+}
+
+.right-panel .day-toggle .nav-link.active {
+  color: var(--color-text);
+  border-bottom: none;
+  text-decoration: underline wavy;
+  text-decoration-color: var(--color-text-muted);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Weather Day Cards */
+.weather-cards {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.weather-day-card {
+  flex: 1;
+  min-width: 70px;
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.weather-day-label {
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.weather-day-icon {
+  object-fit: contain;
+  margin: 0.25rem auto;
+  display: block;
+}
+
+.weather-day-temp {
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+/* Today's Overview */
+.todays-overview {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.overview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.overview-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.overview-card {
+  flex: 1;
+  min-width: 140px;
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.overview-card-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.overview-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.overview-card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.overview-card-status.status-good {
+  color: var(--color-status-good);
+  font-size: 0.85rem;
+}
+
+.overview-card-status.status-moderate {
+  color: var(--color-status-moderate);
+  font-size: 0.85rem;
+}
+
+.overview-card-status.status-normal {
+  color: var(--color-status-normal);
+  font-size: 0.85rem;
+}
+
+.overview-card-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.precipitation-card {
+  flex: 1;
+  min-width: 280px;
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.precipitation-label {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.precipitation-chart {
+  width: 100%;
+  height: auto;
+}
+
+.sunrise-sunset-card {
+  flex: 0 0 200px;
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.sunrise-sunset-label {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.sunrise-sunset-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sunrise-sunset-item:last-child {
+  margin-bottom: 0;
+}
+
+.sunrise-sunset-icon {
+  font-size: 2.5rem;
+  color: var(--color-text-muted);
+}
+
+.sunrise-sunset-label-small {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.sunrise-sunset-time {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.nav-underline .nav-link {
+  border-bottom: none !important;
+  text-decoration: none;
+}
+
+.nav-underline .nav-link:hover,
+.nav-underline .nav-link.active {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
+.nav-link {
+  color: var(--color-white) !important;
+  text-decoration-style: wavy;
+}
